@@ -34,7 +34,9 @@ function MainApp() {
     isOnboarding,
   } = useMephistoTask();
 
-  useAnnotatorTracker(handleMetadataSubmit, isLoading, 5000);
+  if (!isPreview) {
+    useAnnotatorTracker(handleMetadataSubmit, isLoading, 5000);
+  }
 
   if (blockedReason !== null) {
     return (
