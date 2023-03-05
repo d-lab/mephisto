@@ -7,10 +7,6 @@
  */
 
 "use strict";
-import spawn from "cross-spawn";
-import { createRequire } from "module";
-
-const require = createRequire(import.meta.url);
 
 // Makes the script crash on unhandled rejections instead of silently
 // ignoring them. In the future, promise rejections that are not handled will
@@ -19,6 +15,7 @@ process.on("unhandledRejection", (err) => {
   throw err;
 });
 
+const spawn = require("cross-spawn");
 const args = process.argv.slice(2);
 
 const scriptIndex = args.findIndex(
