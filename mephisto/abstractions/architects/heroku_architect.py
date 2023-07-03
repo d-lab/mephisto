@@ -423,7 +423,9 @@ class HerokuArchitect(Architect):
         domains = subprocess.check_output(
             shlex.split(f"{heroku_executable_path} domains -a {heroku_app_name}")
         ).decode()
-        self.__heroku_app_url = domains.split("\n")[1]
+        pattern = r'([\w-]+\.[\w-]+\.[\w-]+)'
+        match = re.search(pattern, domains)
+        self.__heroku_app_url = match.group(1)
         return "https://{}".format(self.__heroku_app_url)
 
     def __delete_heroku_server(self):
