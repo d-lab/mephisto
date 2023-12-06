@@ -49,6 +49,7 @@ const useMephistoTask = function () {
     blockedReason: null,
     blockedExplanation: null,
     initialTaskData: null,
+    fullData: null,
     isOnboarding: null,
     loaded: false,
   };
@@ -120,6 +121,7 @@ const useMephistoTask = function () {
         mephistoWorkerId: workerId,
         mephistoAgentId: agentId,
         initialTaskData: dataPacket.data.init_task_data,
+        fullData: dataPacket.data,
         loaded: true,
       });
     }
