@@ -32,6 +32,8 @@ function MainApp() {
     handleMetadataSubmit,
     handleFatalError,
     isOnboarding,
+    taskConfig,
+    getAgentRegistration,
   } = useMephistoTask();
 
   if (!isPreview) {
@@ -111,6 +113,7 @@ function MainApp() {
           onSubmit={handleSubmit}
           isOnboarding={isOnboarding}
           onError={handleFatalError}
+          getAgentRegistration={getAgentRegistration}
         />
       </ErrorBoundary>
     </div>
