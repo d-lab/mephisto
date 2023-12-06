@@ -28,6 +28,7 @@ function MainApp() {
     isPreview,
     isLoading,
     initialTaskData,
+    fullData,
     handleSubmit,
     handleMetadataSubmit,
     handleFatalError,
@@ -110,6 +111,7 @@ function MainApp() {
       <ErrorBoundary handleError={handleFatalError}>
         <BaseFrontend
           taskData={initialTaskData}
+          fullData={fullData}
           onSubmit={handleSubmit}
           isOnboarding={isOnboarding}
           onError={handleFatalError}
